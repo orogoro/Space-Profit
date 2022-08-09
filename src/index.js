@@ -1,3 +1,7 @@
+import full from './images/symptomsFull.png';
+import symptoms from './images/symptoms.png';
+import offer from './images/offer.png';
+
 const massange = [
   {
     m: 'Здравствуйте, меня зовут Ольга Викторовна. Я врач высшей категории и кандидат медицинских наук, специализируюсь на кардиологии. Я провожу ЭКГ и занимаюсь лечением ишемической болезни сердца, постинфарктных состояний, артериальной гипертензии, нарушений сердечного ритма и сердечной недостаточности. Добро пожаловать на мой официальный сайт.',
@@ -202,7 +206,7 @@ function YsNo() {
 
 function Photofoot() {
   $('.chat-content-list').append(
-    '<div class="chat-content-desc-item manager"><img class="symptomsImg" style="max-width: 625px;" src="images/symptomsFull.png" id="foot1"><img class="symptoms-mobile" src="images/symptoms.png"></div>'
+    `<div class="chat-content-desc-item manager"><img class="symptomsImg" style="max-width: 625px;" src=${full} id="foot1"><img class="symptoms-mobile" src=${symptoms}></div>`
   );
   setTimeout(() => {
     addArray();
@@ -236,7 +240,7 @@ function addArray() {
     m: 'Вот так он выглядит: ',
   };
   end_massange9 = {
-    m: '<img src="images/offer.png">',
+    m: `<img src=${offer}>`,
   };
   end_massange10 = {
     m: 'Оптимальная продолжительность курса, которая учитывает Ваш возраст, образ жизни и текущее состояние здоровья, составляет от 30 дней.',
