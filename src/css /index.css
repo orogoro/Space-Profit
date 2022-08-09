@@ -2832,8 +2832,14 @@ html.add-scroll {
 .chat-content-buttons-gender {
   display: flex;
   flex-wrap: wrap;
-  width: 340px;
+  width: 210px;
   margin-left: auto;
+}
+
+@media only screen and (max-width: 991px) {
+  .chat-content-buttons-gender {
+    width: 340px;
+  }
 }
 
 .chat-content-buttons-gender-block {
