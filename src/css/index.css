@@ -1,0 +1,10 @@
+/* // @import './example'; */
+
+.example {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: aqua;
+  border: 5px solid #0000;
+}
