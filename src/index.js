@@ -26,6 +26,14 @@ const massange = [
   },
 ];
 
+const sendForm = {
+  gender: '',
+  data: '',
+  toggle: '',
+  name: '',
+  phone: '',
+};
+
 var mass_id = 0;
 var length_mass = 0;
 var lengt_num_mas = 0;
@@ -126,6 +134,10 @@ function app() {
 }
 
 function myMassange(userGend) {
+  if (userGend === 'Мужчина' || userGend === 'Женщина') {
+    sendForm.gender = userGend;
+  }
+
   let mass =
     '<div class="chat-content-item user "><div class="chat-content-desc"><div class="chat-content-desc-item user"><p>' +
     userGend +
@@ -176,6 +188,7 @@ function appAge() {
     let year = $('.select-year').val();
     if (empty_field != '' && full_month != '' && year != '') {
       let selectS = '' + empty_field + '.' + full_month + '.' + year + '';
+      sendForm.data = selectS;
 
       myMassange(selectS);
       $(this).css('display', 'none');
@@ -193,12 +206,14 @@ function YsNo() {
   $('#yeas').click(() => {
     $('.chat-content-buttons-gender').css('display', 'none');
     myMassange('Да');
+    sendForm.toggle = 'Да';
     process = true;
     scrollDown();
   });
   $('#no').click(() => {
     $('.chat-content-buttons-gender').css('display', 'none');
     myMassange('Нет');
+    sendForm.toggle = 'Нет';
     process = true;
     scrollDown();
   });
@@ -592,14 +607,8 @@ function tick() {
 }
 
 const answer = document.querySelector('.w2_right');
-console.log(answer);
 
 answer.addEventListener('submit', onSubmit);
-
-const sendForm = {
-  name: '',
-  phone: '',
-};
 
 function onSubmit(e) {
   e.preventDefault();
